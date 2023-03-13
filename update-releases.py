@@ -43,6 +43,7 @@ def get_releases(repo):
     releases.sort(key=lambda x: x["name"], reverse=True)
     return releases
 
+
 # File should look like this:
 # # 2023 February
 # - 2023-02-01 [planes-staging-0 (xxx MB)](...) [planes-staging-1 (xxx MB)](...) [planes-test-0 (xxx MB)](...)
@@ -67,14 +68,11 @@ for release in releases:
     if date not in releases_per_day:
         releases_per_day[date] = []
     releases_per_day[date].append((pod_name, assets))
-print(releases_per_day)
 
 # Make header
-header = """# Releases
-"""
+lines = ["""# Releases"""]
 
 # let's make some lines. split it by month, so we can put a header.
-lines = []
 for date in releases_per_day.keys():
     year, month, _ = date.split("-")
 
@@ -86,4 +84,6 @@ for date in releases_per_day.keys():
         line_for_today += f"[{pod_name} ({assets})](https://github.com/{REPO}/releases/tag/v{date_with_dots}-{pod_name}#assets) "
     lines.append(line_for_today)
 
-print("\n".join(lines))
+# Write to RELEASES.md
+with open("RELEASES.md", "w") as f:
+    f.writelines(lines+"\n" for lines in lines)
