@@ -17,6 +17,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 set -ex
+function cleanup(){
+    if [ ! -z "$AFTER_SCRIPT" ]; then
+        bash -c "$AFTER_SCRIPT"
+    fi
+}
+trap cleanup EXIT
 # This script:
 # Is idempotent. It can be run multiple times without causing any issues.
 # 1. Gets the name of the pods starting with 'planes-readsb-' and put it in a variable called 'PODS'
@@ -38,6 +44,12 @@ set -ex
 # 6. If we have backed it up, do nothing.
 # 7. If the folder is not a date, do nothing.
 # 8. If the folder is not older than 1 day, do nothing.
+
+# Try sorucing .env in current folder
+CURRENT_DIR=$(dirname "$0")
+if [ -f "$CURRENT_DIR/.envrc" ]; then
+    source "$CURRENT_DIR/.envrc" || true
+fi
 
 PODS=$(kubectl -n adsblol get pods | grep planes-readsb | awk '{print $1}')
 SAVEIFS=$IFS
@@ -104,8 +116,8 @@ for POD in $PODS; do
             continue
         fi
         # Add the ODbL license to the folder
-        cp LICENSE-*.txt "$TMP_FOLDER"
-        envsubst < README.txt > "$TMP_FOLDER/README.txt"
+        cp "$CURRENT_DIR/LICENSE-cc0.txt" "$CURRENT_DIR/LICENSE-ODbL.txt" "$TMP_FOLDER"
+        envsubst < "$CURRENT_DIR/README.txt" > "$TMP_FOLDER/README.txt"
 
         # 5.3. tar the temp folder (.tar, since it is zstd files inside)
         TMPTAR=$(mktemp -d)
@@ -130,3 +142,5 @@ for POD in $PODS; do
         echo "- [$RELEASE_NAME]($RELEASE_LINK)" >> README.md
     done
 done
+# AFTER_SCRIPT might be set in .envrc
+# This is useful for running commands to clean up after the script
