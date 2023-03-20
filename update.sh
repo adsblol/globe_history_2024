@@ -137,9 +137,9 @@ for POD in $PODS; do
         README=$(echo '```' && cat "$TMP_FOLDER/README.txt" && echo '```')
         github-release adsblol/globe_history "$RELEASE_NAME" main "$README" "$TMPTAR/*"
         rm -rf "$TMPTAR" "$TMP_FOLDER"
-        # 5.6. Add a new line to the README.md with the link to the
 
-        echo "- [$RELEASE_NAME]($RELEASE_LINK)" >> README.md
+        # Run cleanup in the pod
+        kubectl -n adsblol exec -ti $POD -- /var/globe_history/cleanup.sh
     done
 done
 # AFTER_SCRIPT might be set in .envrc
