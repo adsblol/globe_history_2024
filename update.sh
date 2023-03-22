@@ -125,8 +125,10 @@ for POD in $PODS; do
         tar -C "$TMP_FOLDER" -cf "$TARNAME" .
         # 5.4. Try splitting the tar since it might be too big for GitHub (2GB limit)
         # Only split if the file is bigger than 2GB
-        # WARNING! Should work on macOS, and Linux! Tested on both.
-        if [ $(stat -f%z "$TARNAME") -gt 2000000000 ]; then
+        # WARNING! This only works on macos
+        #if [ $(stat -f%z "$TARNAME") -gt 2000000000 ]; then
+        # for linux,
+        if [ $(stat -c%s "$TARNAME") -gt 2000000000 ]; then
             echo "[ info] $TARNAME is bigger than 2GB. Splitting."
             # Split the tar into 2GB chunks
             split -b 2000000000 "$TARNAME" "$TMPTAR/$RELEASE_NAME.tar."
