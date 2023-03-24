@@ -140,9 +140,9 @@ for POD in $PODS; do
         github-release adsblol/globe_history "$RELEASE_NAME" main "$README" "$TMPTAR/*"
         rm -rf "$TMPTAR" "$TMP_FOLDER"
 
-        # Run cleanup in the pod
-        kubectl -n adsblol exec -ti $POD -- /var/globe_history/cleanup.sh
     done
+    # Run cleanup in the pod
+    kubectl -n adsblol exec -ti $POD -- bash /var/globe_history/cleanup.sh
 done
 # AFTER_SCRIPT might be set in .envrc
 # This is useful for running commands to clean up after the script
