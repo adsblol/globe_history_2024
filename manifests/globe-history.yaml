@@ -1,0 +1,63 @@
+# cronjob to run every day at 3AM and 4AM
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: globe-history
+spec:
+  schedule: "0 3,4 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          serviceAccountName: globe-history
+          volumes:
+          - name: globe-history
+            configMap:
+              name: globe-history
+              defaultMode: 0755
+          containers:
+          - name: kubectl
+            image: bitnami/kubectl:1.26
+            command: ["/globe-history/update.sh"]
+            volumeMounts:
+            - name: globe-history
+              mountPath: /globe-history
+            envFrom:
+            - secretRef:
+                name: globe-history
+---
+# rbac
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: globe-history
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: globe-history
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+# exec
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  verbs: ["create"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: globe-history
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: globe-history
+subjects:
+- kind: ServiceAccount
+  name: globe-history
+  namespace: adsblol

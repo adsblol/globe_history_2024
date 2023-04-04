@@ -1,0 +1,8 @@
+resources:
+- globe-history.yaml
+
+# make configmap with value=../update.sh
+configMapGenerator:
+- name: globe-history
+  files:
+  - update.sh
