@@ -25,6 +25,7 @@ import os
 
 REPO = "adsblol/globe_history"
 RELEASES_FILE = "RELEASES.md"
+PREFERRED_RELEASES_FILE = "PREFERRED_RELEASES.txt"
 
 # Get all releases
 # https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
@@ -54,20 +55,34 @@ def get_releases(repo):
 
 releases = get_releases(REPO)
 releases_per_day = {}
+preferred_releases_per_day = {}
+
 for release in releases:
     # Get date
     date = release["name"][1:11].replace(".", "-")
+    date_with_dots = date.replace("-", ".")
     # Get pod name
     pod_name = release["name"][12:]
     # Get assets
     assets_size = 0
     for asset in release["assets"]:
-        assets_size += asset["size"]
+        # check if it is a .tar file
+        if asset["name"].endswith(".tar"):
+            assets_size += asset["size"]
     assets = f"{assets_size // 1024 // 1024} MB"
     # Add to releases_per_day
     if date not in releases_per_day:
         releases_per_day[date] = []
     releases_per_day[date].append((pod_name, assets))
+    # Add to preferred_releases_per_day if it is bigger than the current one
+    # example:
+    link = f"https://github.com/{REPO}/releases/download/v{date_with_dots}-{pod_name}/v{date_with_dots}-{pod_name}.tar"
+    if date not in preferred_releases_per_day:
+        preferred_releases_per_day[date] = (link, assets_size)
+    else:
+        if assets_size > preferred_releases_per_day[date][1]:
+            preferred_releases_per_day[date] = (link, assets_size)
+
 
 # Make header
 lines = ["""# Releases"""]
@@ -87,3 +102,7 @@ for date in releases_per_day.keys():
 # Write to RELEASES.md
 with open("RELEASES.md", "w") as f:
     f.writelines(lines+"\n" for lines in lines)
+
+# Write to PREFERRED_RELEASES.txt
+with open("PREFERRED_RELEASES.txt", "w") as f:
+    f.writelines(f"{link}\n" for link, _ in preferred_releases_per_day.values())
