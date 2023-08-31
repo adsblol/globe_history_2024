@@ -26,6 +26,7 @@ import os
 REPO = "adsblol/globe_history"
 RELEASES_FILE = "RELEASES.md"
 PREFERRED_RELEASES_FILE = "PREFERRED_RELEASES.txt"
+CURRENT_SIZE = 0
 
 # Get all releases
 # https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
@@ -70,6 +71,7 @@ for release in releases:
         if asset["name"].endswith(".tar"):
             assets_size += asset["size"]
     assets = f"{assets_size // 1024 // 1024} MB"
+    CURRENT_SIZE += assets_size
     # Add to releases_per_day
     if date not in releases_per_day:
         releases_per_day[date] = []
@@ -106,3 +108,17 @@ with open("RELEASES.md", "w") as f:
 # Write to PREFERRED_RELEASES.txt
 with open("PREFERRED_RELEASES.txt", "w") as f:
     f.writelines(f"{link}\n" for link, _ in preferred_releases_per_day.values())
+
+# Get current_size in GiB
+CURRENT_SIZE = CURRENT_SIZE // 1024 // 1024 // 1024
+
+# read and Write to README.md
+with open("README.md", "r") as f:
+    readme = f.read()
+    # line looks like:
+    # adsblol/globe_history (xxx GiB)
+    import re
+    readme = re.sub(r"\# adsblol/globe_history \(\d+ GiB\)", f"# adsblol/globe_history ({CURRENT_SIZE} GiB)", readme)
+
+with open("README.md", "w") as f:
+    f.write(readme)

@@ -32,7 +32,7 @@ jobs:
         # Now we try adding them, if they have changed
         git config --global user.name "GitHub Actions"
         git config --global user.email "github-actions@adsb.lol"
-        git add RELEASES.md PREFERRED_RELEASES.txt
+        git add RELEASES.md PREFERRED_RELEASES.txt README.md
         # Have we actually changed anything?
         if ! git diff-index --quiet HEAD --; then
           # We have changed something, so we commit and push
