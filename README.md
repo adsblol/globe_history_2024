@@ -4,11 +4,17 @@ This database is made available under the Open Database License: http://opendata
 
 ## What is it?
 
-A daily dump of the /var/globe_history directory from adsb.lol planes containers.
+This database is a collection of all the data known to ADSB.lol, uploaded daily.
 
-The planes containers serve [globe.adsb.lol](https://globe.adsb.lol). Prod is used, unless it is down then staging is used. There are two replicas of prod and one of staging.
+This includes data from ADSB.lol feeders [and friends](https://www.adsb.lol/docs/acknowledgements/partners/), [FlyItalyADSB](https://flyitalyadsb.com/) and [TheAirTraffic.com](https://theairtraffic.com)
 
-These files are accessed by you when you visit [globe.adsb.lol](https://globe.adsb.lol), and are used to render traces.
+## Technically
+
+A dump of the /var/globe_history directory from adsb.lol planes containers.
+
+The planes containers serve [adsb.lol](https://adsb.lol). Prod is used, unless it is down then staging is used. There are two replicas of prod and one of staging.
+
+These files are accessed by you when you visit [the replay functionality](https://adsb.lol?r), and are used to render traces.
 
 The files are written by [readsb](https://github.com/wiedehopf/readsb) and are stored in gzip compressed json format.
 
