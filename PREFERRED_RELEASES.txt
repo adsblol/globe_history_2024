@@ -1,3 +1,4 @@
+https://github.com/adsblol/globe_history/releases/download/v2023.09.22-planes-readsb-prod-0/v2023.09.22-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.09.21-planes-readsb-prod-0/v2023.09.21-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.09.20-planes-readsb-prod-0/v2023.09.20-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.09.19-planes-readsb-prod-0/v2023.09.19-planes-readsb-prod-0.tar
@@ -96,14 +97,7 @@ https://github.com/adsblol/globe_history/releases/download/v2023.06.19-planes-re
 https://github.com/adsblol/globe_history/releases/download/v2023.06.18-planes-readsb-prod-0/v2023.06.18-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.06.17-planes-readsb-prod-0/v2023.06.17-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.06.16-planes-readsb-prod-1/v2023.06.16-planes-readsb-prod-1.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.15-planes-readsb-prod-0/v2023.06.15-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.14-planes-readsb-prod-0/v2023.06.14-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.13-planes-readsb-prod-1/v2023.06.13-planes-readsb-prod-1.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.12-planes-readsb-prod-1/v2023.06.12-planes-readsb-prod-1.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.11-planes-readsb-prod-0/v2023.06.11-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.10-planes-readsb-prod-0/v2023.06.10-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.09-planes-readsb-prod-0/v2023.06.09-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history/releases/download/v2023.06.08-planes-readsb-prod-0/v2023.06.08-planes-readsb-prod-0.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.06.15-planes-readsb-prod-1/v2023.06.15-planes-readsb-prod-1.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.06.07-planes-readsb-prod-0/v2023.06.07-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.06.06-planes-readsb-prod-0/v2023.06.06-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.06.05-planes-readsb-prod-0/v2023.06.05-planes-readsb-prod-0.tar
