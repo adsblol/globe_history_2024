@@ -1,3 +1,4 @@
+https://github.com/adsblol/globe_history/releases/download/v2023.11.28-planes-readsb-prod-0/v2023.11.28-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.11.27-planes-readsb-prod-0/v2023.11.27-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.11.26-planes-readsb-prod-0/v2023.11.26-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.11.25-planes-readsb-prod-0/v2023.11.25-planes-readsb-prod-0.tar
@@ -126,6 +127,11 @@ https://github.com/adsblol/globe_history/releases/download/v2023.07.26-planes-re
 https://github.com/adsblol/globe_history/releases/download/v2023.07.25-planes-readsb-prod-0/v2023.07.25-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.07.24-planes-readsb-prod-0/v2023.07.24-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.07.23-planes-readsb-staging-0/v2023.07.23-planes-readsb-staging-0.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.07.22-planes-readsb-prod-1/v2023.07.22-planes-readsb-prod-1.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.07.21-planes-readsb-prod-1/v2023.07.21-planes-readsb-prod-1.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.07.20-planes-readsb-prod-0/v2023.07.20-planes-readsb-prod-0.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.07.19-planes-readsb-prod-0/v2023.07.19-planes-readsb-prod-0.tar
+https://github.com/adsblol/globe_history/releases/download/v2023.07.18-planes-readsb-prod-0/v2023.07.18-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.07.17-planes-readsb-prod-0/v2023.07.17-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.07.16-planes-readsb-prod-0/v2023.07.16-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history/releases/download/v2023.07.15-planes-readsb-prod-0/v2023.07.15-planes-readsb-prod-0.tar
