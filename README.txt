@@ -33,3 +33,13 @@ By feeding adsb.lol, you agree to the extent possible under law,
 to waive all copyright and related or neighboring rights to your data, associating your work with the CC0 license.
     https://creativecommons.org/publicdomain/zero/1.0/
     Attached locally: LICENSE-CC0.txt
+
+        ____
+     .-" +' "-.    __,  ,___,
+    /.'.'A_'*`.\  (--|__| _,,_ ,_
+   |:.*'/\-\. ':|   _|  |(_||_)|_)\/
+   |:.'.||"|.'*:|  (        |  | _/
+    \:~^~^~^~^:/          __,  ,___,
+     /`-....-'\          (--|__| _ |' _| _,   ,
+jgs /          \           _|  |(_)||(_|(_|\//_)
+    `-.,____,.-'          (               _/
