@@ -9,7 +9,7 @@
       ░    ░  ░   ░ ░ ░        ░  ░░  ░  ░░       ░           ░ ░   ░     ░ ░
                            ░
 
-https://github.com/adsblol/globe_history/
+https://github.com/adsblol/globe_history_2023/
 
 This is a database for the day of $DATE_WITH_DASHES of all aircraft known to adsb.lol.
 GitHub Release: $RELEASE_NAME
