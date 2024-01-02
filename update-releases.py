@@ -14,6 +14,7 @@
 import requests
 import json
 import os
+import datetime
 
 # This script:
 # Is idempotent. It can be run multiple times without causing any issues.
@@ -23,7 +24,8 @@ import os
 # Make sure it is sorted by date (releasename is v2023-01-31-... always)
 # Make sure it is in reverse order (newest first)
 
-REPO = "adsblol/globe_history_2024"
+CURRENT_YEAR = datetime.datetime.now().year
+REPO = f"adsblol/globe_history_{CURRENT_YEAR}"
 RELEASES_FILE = "RELEASES.md"
 PREFERRED_RELEASES_FILE = "PREFERRED_RELEASES.txt"
 CURRENT_SIZE = 0
@@ -118,7 +120,7 @@ with open("README.md", "r") as f:
     # line looks like:
     # adsblol/globe_history_2024 (xxx GiB)
     import re
-    readme = re.sub(r"\# adsblol/globe_history_2024 \(\d+ GiB\)", f"# adsblol/globe_history_2024 ({CURRENT_SIZE} GiB)", readme)
+    readme = re.sub(r"\# adsblol/globe_history_\d+ \(\d+ GiB\)", f"# adsblol/globe_history_{CURRENT_YEAR} ({CURRENT_SIZE} GiB)", readme)
 
 with open("README.md", "w") as f:
     f.write(readme)

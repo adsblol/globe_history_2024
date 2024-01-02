@@ -17,7 +17,9 @@ set -ex
 # Depends on rclone + $REMOTE variable set to "remote:path"
 
 # Get the PREFERRED_RELEASES
-PREFERRED_RELEASES_LINK="https://raw.githubusercontent.com/adsblol/globe_history_2024/main/PREFERRED_RELEASES.txt"
+CURRENT_YEAR=$(date +%Y)
+
+PREFERRED_RELEASES_LINK="https://raw.githubusercontent.com/adsblol/globe_history_$CURRENT_YEAR/main/PREFERRED_RELEASES.txt"
 PREFERRED_RELEASES=$(curl -fsL $PREFERRED_RELEASES_LINK)
 
 # Each line is a .tar link, we get it, extract it and upload it to s3.
@@ -27,7 +29,7 @@ MAXFULLDAYS=3
 for RELEASE in $PREFERRED_RELEASES
 do
     # This line looks like this:
-    # https://github.com/adsblol/globe_history_2024/releases/download/v2023.02.16-planes-readsb-test-0/v2023.02.16-planes-readsb-test-0.tar
+    # https://github.com/adsblol/globe_history_$CURRENT_YEAR/releases/download/v2023.02.16-planes-readsb-test-0/v2023.02.16-planes-readsb-test-0.tar
     # Extract the filename from the link, etc
 
     FILENAME=$(basename $RELEASE) # v2023.02.16-planes-readsb-test-0.tar
