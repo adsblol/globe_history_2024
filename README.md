@@ -1,4 +1,4 @@
-# adsblol/globe_history_2023 (1077 GiB)
+# adsblol/globe_history_2024 (0 GiB)
 
 This database is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/.
 
@@ -20,7 +20,7 @@ The files are written by [readsb](https://github.com/wiedehopf/readsb) and are s
 
 ## Releases
 
-All files are downloadable from the [releases tab](https://github.com/adsblol/globe_history_2023/releases) of this repository.
+All files are downloadable from the [releases tab](https://github.com/adsblol/globe_history_2024/releases) of this repository.
 
 See [RELEASES.md](RELEASES.md) for a formatted list of links.
 

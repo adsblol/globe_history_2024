@@ -67,7 +67,7 @@ done
 DATA_DIR=$(mktemp -d)
 # We get README.txt, LICENSE-cc0.txt, and LICENSE-ODbL.txt from the github repo
 for FILE in README.txt LICENSE-cc0.txt LICENSE-ODbL.txt; do
-    wget -O "$DATA_DIR/$FILE" "https://raw.githubusercontent.com/adsblol/globe_history_2023/main/$FILE"
+    wget -O "$DATA_DIR/$FILE" "https://raw.githubusercontent.com/adsblol/globe_history_2024/main/$FILE"
 done
 
 #
@@ -102,7 +102,7 @@ for POD in $PODS; do
         DATE_WITH_DOTS=$(echo $DATE | sed 's/\//./g')
         export DATE_WITH_DASHES=$(echo $DATE | sed 's/\//-/g')
         export RELEASE_NAME="v$DATE_WITH_DOTS-$POD"
-        export RELEASE_LINK="https://github.com/adsblol/globe_history_2023/releases/tag/$RELEASE_NAME"
+        export RELEASE_LINK="https://github.com/adsblol/globe_history_2024/releases/tag/$RELEASE_NAME"
         TODAY=$(date +%Y/%m/%d)
         export TODAY_WITH_DASHES=$(date +%Y-%m-%d)
         export FOLDER=$FOLDER
@@ -115,7 +115,7 @@ for POD in $PODS; do
         fi
         # 4. Check if we already backed it up.
         #    We can check by seeing if there is a GitHub Release vYYYY.MM.DD
-        RELEASE=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" -s https://api.github.com/repos/adsblol/globe_history_2023/releases | jq -r '.[].tag_name' | grep $RELEASE_NAME || true)
+        RELEASE=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" -s https://api.github.com/repos/adsblol/globe_history_2024/releases | jq -r '.[].tag_name' | grep $RELEASE_NAME || true)
         # If it exists, we skip
         if [ ! -z "$RELEASE" ]; then
             echo "[ info] $RELEASE_NAME has already been backed up. Skipping."
@@ -154,7 +154,7 @@ for POD in $PODS; do
         fi
         # 5.5. Upload the tar to GitHub releases
         README=$(echo '```' && cat "$TMP_FOLDER/README.txt" && echo '```')
-        github-release adsblol/globe_history_2023 "$RELEASE_NAME" main "$README" "$TMPTAR/*"
+        github-release adsblol/globe_history_2024 "$RELEASE_NAME" main "$README" "$TMPTAR/*"
         rm -rf "$TMPTAR" "$TMP_FOLDER"
 
     done
