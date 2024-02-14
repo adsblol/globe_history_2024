@@ -90,7 +90,7 @@ fi
 for POD in $PODS; do
     echo "[ info] Processing pod $POD"
     YEAR=$(date +%Y)
-    FOLDERS=$(kubectl -n adsblol exec -ti $POD -- find /var/globe_history/$YEAR -maxdepth 2 || true)
+    FOLDERS=$(kubectl -n adsblol exec -ti $POD -- find /var/globe_history/ -maxdepth 3 || true)
     IFS=$'\n\r'
     for FOLDER in $FOLDERS; do
         IFS=$SAVEIFS
@@ -121,6 +121,14 @@ for POD in $PODS; do
         # If it exists, we skip
         if [ ! -z "$RELEASE" ]; then
             echo "[ info] $RELEASE_NAME has already been backed up. Skipping."
+            continue
+        fi
+        # Try seeing if file exists,
+        # https://github.com/adsblol/globe_history_2024/releases/download/v2024.01.19-planes-readsb-staging-0/v2024.01.19-planes-readsb-staging-0.tar
+        # If it exists, we skip
+        FILE_URL="https://github.com/adsblol/globe_history_$CURRENT_YEAR/releases/download/$RELEASE_NAME/$RELEASE_NAME.tar"
+        if curl -s --head $FILE_URL | head -n 1 | grep "HTTP/[123][.1]* [23].." > /dev/null; then
+            echo "[ info] $FILE_URL has already been backed up. Skipping."
             continue
         fi
         # Otherwise let's get to work
