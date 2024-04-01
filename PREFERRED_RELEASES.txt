@@ -1,5 +1,6 @@
+https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.31-planes-readsb-prod-0/v2024.03.31-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.30-planes-readsb-prod-0/v2024.03.30-planes-readsb-prod-0.tar
-https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.29-planes-readsb-prod-0/v2024.03.29-planes-readsb-prod-0.tar
+https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.29-planes-readsb-staging-0/v2024.03.29-planes-readsb-staging-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.28-planes-readsb-prod-0/v2024.03.28-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.27-planes-readsb-prod-0/v2024.03.27-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.03.26-planes-readsb-prod-0/v2024.03.26-planes-readsb-prod-0.tar
