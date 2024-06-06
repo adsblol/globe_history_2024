@@ -1,3 +1,4 @@
+https://github.com/adsblol/globe_history_2024/releases/download/v2024.06.05-planes-readsb-mlatonly-0/v2024.06.05-planes-readsb-mlatonly-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.06.04-planes-readsb-mlatonly-0/v2024.06.04-planes-readsb-mlatonly-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.06.03-planes-readsb-mlatonly-0/v2024.06.03-planes-readsb-mlatonly-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.06.02-planes-readsb-mlatonly-0/v2024.06.02-planes-readsb-mlatonly-0.tar
@@ -41,7 +42,7 @@ https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.26-plan
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.25-planes-readsb-mlatonly-0/v2024.04.25-planes-readsb-mlatonly-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.24-planes-readsb-mlatonly-0/v2024.04.24-planes-readsb-mlatonly-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.23-planes-readsb-mlatonly-0/v2024.04.23-planes-readsb-mlatonly-0.tar
-https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.22-planes-readsb-mlatonly-0/v2024.04.22-planes-readsb-mlatonly-0.tar
+https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.22-planes-readsb-prod-0/v2024.04.22-planes-readsb-prod-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.21-planes-readsb-staging-0/v2024.04.21-planes-readsb-staging-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.20-planes-readsb-staging-0/v2024.04.20-planes-readsb-staging-0.tar
 https://github.com/adsblol/globe_history_2024/releases/download/v2024.04.19-planes-readsb-mlatonly-0/v2024.04.19-planes-readsb-mlatonly-0.tar
