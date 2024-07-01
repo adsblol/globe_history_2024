@@ -83,14 +83,20 @@ then
     if [ "$SYSTEM" == "darwin" ]; then
         ARCH="amd64"
     fi
-    wget -O- "https://github.com/c4milo/github-release/releases/download/v1.1.0/github-release_v1.1.0_${SYSTEM}_${ARCH}.tar.gz" | tar -xz -C /usr/local/bin
-    chmod +x /usr/local/bin/github-release
+    URL="https://github.com/c4milo/github-release/releases/download/v1.1.0/github-release_v1.1.0_${SYSTEM}_${ARCH}.tar.gz"
+    OUT=$(mktemp)
+    while ! timeout 10 curl -L -s -o $OUT $URL; do
+        echo "Failed to download github-release, retrying in 3s..."
+        sleep 3
+    done
+    tar -C /usr/local/bin -xzf $OUT github-release
+    rm $OUT
 fi
 
 for POD in $PODS; do
     echo "[ info] Processing pod $POD"
     YEAR=$(date +%Y)
-    FOLDERS=$(kubectl -n adsblol exec -ti $POD -- find /var/globe_history/ -maxdepth 3 -mindepth 3 | sort -r || true)
+    FOLDERS=$(kubectl -n adsblol exec -ti $POD -- find /var/globe_history/ -maxdepth 3 -mindepth 3 | sort -r | head -n7 || true)
     IFS=$'\n\r'
     for FOLDER in $FOLDERS; do
         IFS=$SAVEIFS
