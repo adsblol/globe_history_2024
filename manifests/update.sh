@@ -162,6 +162,21 @@ for POD in $PODS; do
             # Delete the original tar
             rm "$TARNAME"
         fi
+        SHOULD_SKIP=0
+        # check if these split files exist in the release, if they do, skip
+        for FILE in $(ls "$TMPTAR"); do
+            FILE_URL="https://github.com/adsblol/globe_history_$CURRENT_YEAR/releases/download/$RELEASE_NAME/$FILE"
+            if curl -s --head $FILE_URL | head -n 1 | grep "HTTP/[123][.1]* [23].." > /dev/null; then
+                echo "[ info] $FILE_URL has already been backed up. Skipping."
+                SHOULD_SKIP=$((SHOULD_SKIP+1))
+            fi
+        done
+        # if SHOULD_SKIP is the same as the n of files, skip
+        if [ $SHOULD_SKIP -eq $(ls "$TMPTAR" | wc -l) ]; then
+            echo "[ info] All files have already been backed up. Skipping."
+            rm -rf "$TMPTAR" "$TMP_FOLDER"
+            continue
+        fi
         # 5.5. Upload the tar to GitHub releases
         README=$(echo '```' && cat "$TMP_FOLDER/README.txt" && echo '```')
         github-release adsblol/globe_history_$CURRENT_YEAR "$RELEASE_NAME" main "$README" "$TMPTAR/*"
