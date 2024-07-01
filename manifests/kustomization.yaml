@@ -6,3 +6,5 @@ configMapGenerator:
 - name: globe-history
   files:
   - update.sh
+commonLabels:
+  app: globe-history
