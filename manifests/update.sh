@@ -136,7 +136,7 @@ for POD in $PODS; do
         # 5.1. MKTEMP a folder
         TMP_FOLDER=$(mktemp -d)
         # 5.2. kubectl cp the folder to the temp folder
-        kubectl -n adsblol cp "$POD:$FOLDER" "$TMP_FOLDER"
+        kubectl -n adsblol cp --retries=15 "$POD:$FOLDER" "$TMP_FOLDER"
         # If no data was copied, skip
         if [ ! "$(ls -A $TMP_FOLDER)" ]; then
             echo "[ info] $FOLDER is empty. Skipping."
@@ -169,7 +169,7 @@ for POD in $PODS; do
 
     done
     # Run cleanup in the pod
-    kubectl -n adsblol exec -ti $POD -- bash /var/globe_history/cleanup.sh
+    kubectl -n adsblol exec -ti $POD -- bash /var/globe_history/cleanup.sh || true
 done
 # AFTER_SCRIPT might be set in .envrc
 # This is useful for running commands to clean up after the script
