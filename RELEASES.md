@@ -1,5 +1,6 @@
 # Releases
 # 2024-07
+- 2024-07-02 [planes-readsb-staging-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.02-planes-readsb-staging-0#assets) [planes-readsb-prod-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.02-planes-readsb-prod-0#assets) [planes-readsb-mlatonly-0 (55 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.02-planes-readsb-mlatonly-0#assets) 
 - 2024-07-01 [planes-readsb-staging-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.01-planes-readsb-staging-0#assets) [planes-readsb-prod-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.01-planes-readsb-prod-0#assets) [planes-readsb-mlatonly-0 (55 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.07.01-planes-readsb-mlatonly-0#assets) 
 # 2024-06
 - 2024-06-30 [planes-readsb-staging-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.06.30-planes-readsb-staging-0#assets) [planes-readsb-prod-0 (0 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.06.30-planes-readsb-prod-0#assets) [planes-readsb-mlatonly-0 (54 MB)](https://github.com/adsblol/globe_history_2024/releases/tag/v2024.06.30-planes-readsb-mlatonly-0#assets) 
