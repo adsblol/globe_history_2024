@@ -12,6 +12,8 @@ This includes data from ADSB.lol feeders [and friends](https://www.adsb.lol/docs
 
 A dump of the /var/globe_history directory from adsb.lol planes containers.
 
+***[Documentation for the format of the files can be found at wiedehopf's readsb](https://github.com/wiedehopf/readsb/blob/dev/README-json.md#trace-jsons)***
+
 The planes containers serve [adsb.lol](https://adsb.lol). Prod is used, unless it is down then staging is used. There are two replicas of prod and one of staging.
 
 These files are accessed by you when you visit [the replay functionality](https://adsb.lol?r), and are used to render traces.
