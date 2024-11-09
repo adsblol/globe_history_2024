@@ -35,7 +35,7 @@ CURRENT_SIZE = 0
 # with pagination!
 def get_releases(repo):
     releases = []
-    url = f"https://api.github.com/repos/{repo}/releases"
+    url = f"v/{repo}/releases"
     while True:
         r = requests.get(url)
         r.raise_for_status()
@@ -70,7 +70,7 @@ for release in releases:
     assets_size = 0
     for asset in release["assets"]:
         # check if it is a .tar file
-        if asset["name"].endswith(".tar"):
+        if asset["name"].contains(".tar"):
             assets_size += asset["size"]
     assets = f"{assets_size // 1024 // 1024} MB"
     CURRENT_SIZE += assets_size
@@ -80,12 +80,14 @@ for release in releases:
     releases_per_day[date].append((pod_name, assets))
     # Add to preferred_releases_per_day if it is bigger than the current one
     # example:
-    link = f"https://github.com/{REPO}/releases/download/v{date_with_dots}-{pod_name}/v{date_with_dots}-{pod_name}.tar"
+    #link = f"https://github.com/{REPO}/releases/download/v{date_with_dots}-{pod_name}/v{date_with_dots}-{pod_name}.tar"
+    # links should be from release.assets.0.browser_download_url, conctenated by string
+    links = ",".join([asset["browser_download_url"] for asset in release["assets"]])
     if date not in preferred_releases_per_day:
-        preferred_releases_per_day[date] = (link, assets_size)
+        preferred_releases_per_day[date] = (links, assets_size)
     else:
         if assets_size > preferred_releases_per_day[date][1]:
-            preferred_releases_per_day[date] = (link, assets_size)
+            preferred_releases_per_day[date] = (links, assets_size)
 
 
 # Make header
