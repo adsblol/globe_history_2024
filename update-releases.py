@@ -35,7 +35,7 @@ CURRENT_SIZE = 0
 # with pagination!
 def get_releases(repo):
     releases = []
-    url = f"v/{repo}/releases"
+    url = f"https://api.github.com/repos/{repo}/releases"
     while True:
         r = requests.get(url)
         r.raise_for_status()
@@ -70,9 +70,9 @@ for release in releases:
     assets_size = 0
     for asset in release["assets"]:
         # check if it is a .tar file
-        if asset["name"].contains(".tar"):
+        if ".tar" in asset["name"]:
             assets_size += asset["size"]
-    assets = f"{assets_size // 1024 // 1024} MB"
+    assets = f"{assets_size // 1024 // 1024} MiB"
     CURRENT_SIZE += assets_size
     # Add to releases_per_day
     if date not in releases_per_day:
