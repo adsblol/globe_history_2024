@@ -30,9 +30,15 @@ Each release is 1 day of flight data. In the future, this data could be processe
 
 Would you like to help? Get in touch!
 
-# Acknowledgements
+## Acknowledgements
 
 - **The feeders**, without people like you sharing their data, there would be nothiing to share. Together we make an open dataset of flight records for the public.
 - **The existing open source software**, adsb.lol is not much more than a [prod-ready configuration](https://github.com/adsblol/infra) of [readsb](https://github.com/wiedehopf/readsb), [tar1090](https://github.com/wiedehopf/tar1090), [mlat-server](https://github.com/wiedehopf/mlat-server).
 - **GitHub**, for storing and serving open source / open data releases of aircraft flights history.
 - Most other flight aggregators, with the exception of [ADSBHub](https://www.adsbhub.org/), [OpenSky Network](https://opensky-network.org/), for holding tight onto their data and giving me the motivation to show it is possible! :)
+
+## External projects making use of adsblol data
+
+- Please get in touch if your project/initiative/repository makes use of the adsblol data and you want to be featured in this section. So far, the following initiatives are known:
+- [Aircraft-Flight-Logs](https://github.com/MrAirspace/aircraft-flight-logs), which are flight schedules per aircraft, extracted from the ADS-B position reports:
+  ![image](https://github.com/user-attachments/assets/acb35c59-05be-4fa0-b64e-3869eca9623a)
