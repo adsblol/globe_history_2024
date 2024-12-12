@@ -36,8 +36,9 @@ CURRENT_SIZE = 0
 def get_releases(repo):
     releases = []
     url = f"https://api.github.com/repos/{repo}/releases"
+    headers = {"Authorization": f"token {os.getenv('GITHUB_TOKEN')}"} if os.getenv("GITHUB_TOKEN") else {}
     while True:
-        r = requests.get(url)
+        r = requests.get(url,headers=headers)
         r.raise_for_status()
         releases += r.json()
         if "next" not in r.links:
@@ -59,6 +60,7 @@ def get_releases(repo):
 releases = get_releases(REPO)
 releases_per_day = {}
 preferred_releases_per_day = {}
+all_releases_per_day = {}
 
 for release in releases:
     # Get date
@@ -83,6 +85,9 @@ for release in releases:
     #link = f"https://github.com/{REPO}/releases/download/v{date_with_dots}-{pod_name}/v{date_with_dots}-{pod_name}.tar"
     # links should be from release.assets.0.browser_download_url, conctenated by string
     links = ",".join([asset["browser_download_url"] for asset in release["assets"]])
+    if date not in all_releases_per_day:
+        all_releases_per_day[date] = []
+    all_releases_per_day[date].append([links])
     if date not in preferred_releases_per_day:
         preferred_releases_per_day[date] = (links, assets_size)
     else:
@@ -126,3 +131,9 @@ with open("README.md", "r") as f:
 
 with open("README.md", "w") as f:
     f.write(readme)
+
+with open("ALL-RELEASES.txt", "a") as f:
+    for date in all_releases_per_day.keys():
+        for links in all_releases_per_day[date]:
+            f.write(",".join(links) + "\n")
+
